@@ -1,0 +1,1424 @@
+CREATE TABLE ClinicalEvent (
+
+ClinicalEventID int IDENTITY(1,1) NOT NULL,
+PatID int NOT NULL,
+ClinicalEventTypeID int NOT NULL,
+EventTypeID as ClinicalEventTypeID,
+ClinicalEventStartDate DateTime NOT NULL,
+ClinicalEventEndDate DateTime NULL,
+AllData XML COLUMN_SET FOR ALL_SPARSE_COLUMNS,
+
+[Primary_cause_of_death] int SPARSE,
+[Timeline_event] int SPARSE,
+[Reason_for_change_PD_to_HD] int SPARSE,
+[Reason_for_change_HD_to_PD] int SPARSE,
+[Primary_renal_diagnosis] int SPARSE,
+[Co_morbidity_at_first_dialysis] int SPARSE,
+[Route_of_referral] int SPARSE,
+[Renal_Replacement_Therapy] int SPARSE,
+[Ethnicity] int SPARSE,
+[Referral_modality] int SPARSE,
+[Diagnosis_list] int SPARSE,
+[Occupation] int SPARSE,
+[Procedure] int SPARSE,
+[Social_assessment] varchar(max) SPARSE,
+[Dietary_assessment] varchar(max) SPARSE,
+[Urgency] int SPARSE,
+[Reason_for_admission] varchar(max) SPARSE,
+[Allergy_list] int SPARSE,
+[Secondary_renal_diagnosis] int SPARSE,
+[Problem_List] varchar(max) SPARSE,
+[BP] int SPARSE,
+[Reason_for_transfer] varchar(max) SPARSE,
+[Clinic_note] int SPARSE,
+[Weight] int SPARSE,
+[Height] int SPARSE,
+[Discharge_note] int SPARSE,
+[Hospital] int SPARSE,
+[Procedure_location_type] int SPARSE,
+[Operator] varchar(max) SPARSE,
+[Implant_type_and_lot] varchar(max) SPARSE,
+[Anatomical_site] int SPARSE,
+[Laterality] int SPARSE,
+[Procedure_note] int SPARSE,
+[Primary_Discharge_diagnosis] int SPARSE,
+[Co_morbidity] int SPARSE,
+[Discharge_diagnosis] int SPARSE,
+[Transplant_list_status] int SPARSE,
+[Transplant_Procedure] int SPARSE,
+[Tissue_type] varchar(max) SPARSE,
+[Organism] int SPARSE,
+[PD_Fluid_appearance] int SPARSE,
+[PD_peritonitis_presentation] int SPARSE,
+[Observations] int SPARSE,
+[Registry_data_consent] int SPARSE,
+[In_patient_location] int SPARSE,
+[Renal_impairment_upon_admission] int SPARSE,
+[Procedure_location] int SPARSE,
+[Location_of_Medical_Supervision] int SPARSE,
+[Operator] int SPARSE,
+[Assistant] int SPARSE,
+[PD_Catheter] int SPARSE,
+[Lot_Number] varchar(max) SPARSE,
+[PD_Peritonitis_presentation] int SPARSE,
+[Vascular_Access] int SPARSE,
+[PD_Access] int SPARSE,
+[PD_Peritonitis_status] int SPARSE,
+[PD_Exit_Site_appearance] int SPARSE,
+[PD_Exit_Site_exudates] int SPARSE,
+[PD_Catheter_track] int SPARSE,
+[PD_Catheter_Cuff_position] int SPARSE,
+[PD_Patient_symptoms] int SPARSE,
+[PD_24_Hr_U_F_volume] varchar(max) SPARSE,
+[24_Hr_Urine_volume] varchar(max) SPARSE,
+[PD_Patient_Fluid_status] int SPARSE,
+[PD_Therapy] int SPARSE,
+[PD_Prescription] int SPARSE,
+[Renal_Classification] int SPARSE,
+[Treatment_Centre] int SPARSE,
+[PD_Exit_Site_infection_status] int SPARSE,
+[ESRD_Treatment_Location] int SPARSE,
+[Transplant_List_Note] int SPARSE,
+[PD_Exit_Site_Category] int SPARSE,
+[PD_Peritonitis_note] int SPARSE,
+[PD_Exit_Site_infection_note] int SPARSE,
+[General_Clinical_Terms] int SPARSE,
+[HD_Prescription] int SPARSE,
+[HD_Patient_Fluid_Status] int SPARSE,
+[HD_Schedule] int SPARSE,
+[Referring_Hospital] int SPARSE,
+[Reason_for_discontinuation_of_dialysis] int SPARSE,
+[HD_Access_Graft_formation] int SPARSE,
+[Secondary_cause_of_death] int SPARSE,
+[Cause_of_death_note] int SPARSE,
+[HD_Review_Note] int SPARSE,
+[PD_Review_Note] int SPARSE,
+[Review_plan] int SPARSE,
+[Blood_product] int SPARSE,
+[Serial_number] varchar(max) SPARSE,
+[Number_of_units] float SPARSE,
+[Blood_group_of_product] int SPARSE,
+[Blood_Group] int SPARSE,
+[Infection_status] int SPARSE,
+[Data_consent_note] int SPARSE,
+[Planned_RRT_Option] int SPARSE,
+[CKD_Review_Note] int SPARSE,
+[Dialysis_access_plan] int SPARSE,
+[Pre_dialysis_education] int SPARSE,
+[CKD_Stage] int SPARSE,
+[Department] int SPARSE,
+[Review_location] int SPARSE,
+[Referral_purpose] int SPARSE,
+[Reason_for_referral] varchar(max) SPARSE,
+[Referral_recipient] int SPARSE,
+[Referral_note] int SPARSE,
+[Requested_HD_Access_procedure] int SPARSE,
+[Requested_PD_Access_procedure] int SPARSE,
+[Litres_exchanged] float SPARSE,
+[Plasma_exchange_product] int SPARSE,
+[Given_by] int SPARSE,
+[Checked_by] int SPARSE,
+[Renal_Patient_View_data_consent] int SPARSE,
+[Hep_B_Immunisation_Requested] int SPARSE,
+[Pre_dialysis_interview] int SPARSE,
+[Procedure_outcome] int SPARSE,
+[Diagnosis_on_admission] int SPARSE,
+[Secondary_diagnosis_on_admission] int SPARSE,
+[Patient_Attendance] int SPARSE,
+[Employment_Status] int SPARSE,
+[English_skills] int SPARSE,
+[Interpreter_required] int SPARSE,
+[Main_language_spoken] int SPARSE,
+[Second_language] int SPARSE,
+[Other_Language_Spoken] int SPARSE,
+[Fitness_for_work] int SPARSE,
+[Education] int SPARSE,
+[Acute_renal_failure_treatment] int SPARSE,
+[Admission_note] int SPARSE,
+[Dominant_arm] int SPARSE,
+[Renal_referral_category] int SPARSE,
+[Renal_referral_note] int SPARSE,
+[Anaesthetic] int SPARSE,
+[HD_Access_Event] int SPARSE,
+[PD_Access_Procedure_Note] int SPARSE,
+[HD_Access_Procedure_Note] int SPARSE,
+[HD_Access_Referral_Note] int SPARSE,
+[PD_Access_Referral_Note] int SPARSE,
+[HD_Access_Note] int SPARSE,
+[HD_Access_Usage_Event] int SPARSE,
+[HD_Access_Surveillance_Event] int SPARSE,
+[HD_Access_Surveillance_Report] varchar(max) SPARSE,
+[HD_Access_Complication] int SPARSE,
+[Access_Complication_Outcome] int SPARSE,
+[HD_Access_Infection] int SPARSE,
+[Infection_outcome] int SPARSE,
+[Referral_Registration_Note] int SPARSE,
+[HD_Access_Graft_material] int SPARSE,
+[Reason_for_removal_of_Access] int SPARSE,
+[PD_Access_Insertion_technique] int SPARSE,
+[PD_Access_Usage_event] int SPARSE,
+[PD_Access_Complication] int SPARSE,
+[PD_Access_Event] int SPARSE,
+[Post_operative_care_plan] varchar(max) SPARSE,
+[Post_transplant_care_plan] varchar(max) SPARSE,
+[Graft_number] float SPARSE,
+[Tx_Clinic_Review_Note] int SPARSE,
+[Score] int SPARSE,
+
+TimeStamp DateTime NULL,
+
+CONSTRAINT [PK_ClinicalEvent] PRIMARY KEY CLUSTERED
+(
+[ClinicalEventID] ASC
+) WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'1',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Primary_cause_of_death];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'2',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Timeline_event];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'3',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Reason_for_change_PD_to_HD];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'4',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Reason_for_change_HD_to_PD];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'5',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Primary_renal_diagnosis];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'6',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Co_morbidity_at_first_dialysis];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'7',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Route_of_referral];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'8',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Renal_Replacement_Therapy];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'9',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Ethnicity];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'10',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Referral_modality];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'12',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Diagnosis_list];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'13',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Occupation];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'14',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Procedure];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'15',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Social_assessment];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'16',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Dietary_assessment];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'17',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Urgency];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'18',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Reason_for_admission];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'20',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Allergy_list];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'21',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Secondary_renal_diagnosis];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'22',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Problem_List];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'23',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [BP];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'25',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Reason_for_transfer];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'27',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Clinic_note];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'28',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Weight];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'29',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Height];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'30',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Discharge_note];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'31',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Hospital];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'32',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Procedure_location_type];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'33',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Operator];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'34',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Implant_type_and_lot];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'36',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Anatomical_site];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'37',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Laterality];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'38',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Procedure_note];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'41',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Primary_Discharge_diagnosis];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'42',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Co_morbidity];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'43',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Discharge_diagnosis];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'44',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Transplant_list_status];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'45',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Transplant_Procedure];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'46',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Tissue_type];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'47',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Organism];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'48',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [PD_Fluid_appearance];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'49',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [PD_peritonitis_presentation];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'53',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Observations];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'54',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Registry_data_consent];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'59',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [In_patient_location];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'60',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Renal_impairment_upon_admission];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'61',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Procedure_location];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'62',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Location_of_Medical_Supervision];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'63',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Operator];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'64',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Assistant];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'65',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [PD_Catheter];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'66',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Lot_Number];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'67',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [PD_Peritonitis_presentation];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'68',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Vascular_Access];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'69',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [PD_Access];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'70',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [PD_Peritonitis_status];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'71',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [PD_Exit_Site_appearance];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'72',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [PD_Exit_Site_exudates];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'73',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [PD_Catheter_track];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'74',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [PD_Catheter_Cuff_position];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'75',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [PD_Patient_symptoms];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'76',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [PD_24_Hr_U_F_volume];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'77',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [24_Hr_Urine_volume];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'78',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [PD_Patient_Fluid_status];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'79',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [PD_Therapy];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'80',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [PD_Prescription];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'81',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Renal_Classification];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'82',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Treatment_Centre];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'84',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [PD_Exit_Site_infection_status];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'85',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [ESRD_Treatment_Location];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'86',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Transplant_List_Note];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'87',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [PD_Exit_Site_Category];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'88',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [PD_Peritonitis_note];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'89',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [PD_Exit_Site_infection_note];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'90',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [General_Clinical_Terms];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'91',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [HD_Prescription];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'92',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [HD_Patient_Fluid_Status];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'93',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [HD_Schedule];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'95',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Referring_Hospital];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'96',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Reason_for_discontinuation_of_dialysis];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'97',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [HD_Access_Graft_formation];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'98',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Secondary_cause_of_death];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'99',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Cause_of_death_note];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'100',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [HD_Review_Note];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'101',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [PD_Review_Note];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'102',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Review_plan];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'103',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Blood_product];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'105',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Serial_number];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'106',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Number_of_units];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'107',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Blood_group_of_product];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'108',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Blood_Group];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'109',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Infection_status];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'110',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Data_consent_note];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'111',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Planned_RRT_Option];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'112',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [CKD_Review_Note];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'113',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Dialysis_access_plan];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'114',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Pre_dialysis_education];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'115',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [CKD_Stage];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'116',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Department];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'117',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Review_location];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'118',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Referral_purpose];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'119',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Reason_for_referral];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'120',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Referral_recipient];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'121',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Referral_note];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'122',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Requested_HD_Access_procedure];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'123',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Requested_PD_Access_procedure];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'124',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Litres_exchanged];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'125',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Plasma_exchange_product];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'126',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Given_by];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'127',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Checked_by];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'128',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Renal_Patient_View_data_consent];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'130',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Hep_B_Immunisation_Requested];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'131',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Pre_dialysis_interview];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'132',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Procedure_outcome];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'133',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Diagnosis_on_admission];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'134',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Secondary_diagnosis_on_admission];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'137',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Patient_Attendance];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'138',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Employment_Status];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'139',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [English_skills];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'140',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Interpreter_required];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'141',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Main_language_spoken];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'142',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Second_language];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'143',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Other_Language_Spoken];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'144',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Fitness_for_work];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'145',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Education];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'146',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Acute_renal_failure_treatment];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'147',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Admission_note];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'148',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Dominant_arm];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'149',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Renal_referral_category];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'150',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Renal_referral_note];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'151',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Anaesthetic];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'152',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [HD_Access_Event];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'153',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [PD_Access_Procedure_Note];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'154',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [HD_Access_Procedure_Note];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'155',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [HD_Access_Referral_Note];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'156',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [PD_Access_Referral_Note];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'157',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [HD_Access_Note];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'158',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [HD_Access_Usage_Event];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'159',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [HD_Access_Surveillance_Event];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'160',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [HD_Access_Surveillance_Report];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'161',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [HD_Access_Complication];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'162',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Access_Complication_Outcome];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'163',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [HD_Access_Infection];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'164',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Infection_outcome];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'165',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Referral_Registration_Note];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'166',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [HD_Access_Graft_material];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'167',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Reason_for_removal_of_Access];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'169',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [PD_Access_Insertion_technique];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'170',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [PD_Access_Usage_event];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'171',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [PD_Access_Complication];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'172',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [PD_Access_Event];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'173',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Post_operative_care_plan];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'174',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Post_transplant_care_plan];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'175',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Graft_number];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'176',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Tx_Clinic_Review_Note];
+GO
+
+ EXEC sys.sp_addextendedproperty 
+@name = N'DataTypeID',
+@value = N'177',
+@level0type = N'SCHEMA', @level0name = dbo,
+@level1type = N'TABLE',  @level1name = SparseEvent,
+@level2type = N'COLUMN', @level2name = [Score];
+GO
+
